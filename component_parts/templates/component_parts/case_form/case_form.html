@@ -1,0 +1,117 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block replay %}<a href="{% url 'case_form' %}"><button class="btn text-nowrap" onclick="" type="button" style="background-size: cover;background-repeat: no-repeat;background-color: 0;color: #fcd508;font-size: 15px;margin: -2px;margin-top: 5px;margin-right: -10px;margin-bottom: 0;margin-left: -20px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Начать сначала</button></a>{% endblock %}
+{% block content-1 %}
+<h5 style="color:#fcd508;"> Your Component Parts </h5>
+    <form method="POST" class="post-form" style="color:#fcd508; max-width:70%;">{% csrf_token %}
+        {{ form.as_ul }}
+        <button class="btn text-nowrap" type="submit" style="background-image: url(&quot;{% static 'assets/img/Ресурс%2011.png'%}&quot;);background-size: cover;background-repeat: no-repeat;background-color: rgba(0,123,255,0);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button>
+
+    </form>
+{% endblock %}
+
+{% block content-2%}
+<h5 style="color:#fcd508;"> Characteristics </h5>
+<p style="color:#fcd508;"> Video Card: </p>
+<select name="Videocard" size="1" id="Combobox4" style="max-width:100%;">
+    {% for gc in catalogue.video_card %}
+    <option value={{gc}}>{{ gc.name }}:
+                        Price - {{gc.price}},
+                        Power - {{gc.power}},
+                        Socket - {{gc.socket}}
+    </option>
+    {% endfor %}
+</select>
+<p style="color:#fcd508;"> CPU: </p>
+    <select name="Processor" size="1" id="Combobox1" style="max-width:100%;">
+        {% for cpu in catalogue.cpu %}
+            <option value="{{cpu}}">{{ cpu.name }}:
+                Cores - {{cpu.cores}},
+                TDP - {{cpu.tdp}},
+                Price - {{cpu.price}},
+                Power - {{cpu.power}},
+                Socket - {{cpu.socket}}
+             </option>
+        {% endfor %}
+
+</select>
+<p style="color:#fcd508;"> RAM: </p>
+<select name="Memory" size="1" id="Combobox5" style="max-width:100%;">
+    {% for ram in catalogue.ram %}
+    <option value={{ram}}>{{ ram.name }}:
+                        Memory - {{ram.amount_of_memory}},
+                        Memory Type - {{ram.memory_type}},
+                        Price - {{ram.price}},
+                        Power - {{ram.power}},
+    </option>
+    {% endfor %}
+</select>
+<p style="color:#fcd508;"> HDD: </p>
+<select name="Hard" size="1" id="Combobox6" style="max-width:100%;">
+    {% for hdd in catalogue.hdd %}
+    <option value={{hdd}}>{{ hdd.name }}:
+                        Memory - {{hdd.amount_of_memory}},
+                        Price - {{hdd.price}},
+                        Power - {{hdd.power}},
+                        Cache Size - {{hdd.cache_size}}
+    </option>
+    {% endfor %}
+</select>
+<p style="color:#fcd508;"> SSD: </p>
+<select name="Box" size="1" id="Combobox8" style="max-width:100%;">
+    {% for ssd in catalogue.ssd %}
+    <option value={{ssd}}>{{ ssd.name }}:
+                        Memory - {{ssd.amount_of_memory}},
+                        Price - {{ssd.price}},
+                        Power - {{ssd.power}},
+                        Interface - {{ssd.interface}}
+    </option>
+    {% endfor %}
+</select>
+
+<p style="color:#fcd508;"> Mother Board: </p>
+<select name="Motherboard" size="1" id="Combobox3" style="max-width:100%;">
+    {% for mb in catalogue.mother_board %}
+    <option value={{mb}}>{{ mb.name }}:
+                        Socket(GC) - {{mb.graphics_card_socket}},
+                        Socket(CPU) - {{mb.cpu_socket}},
+                        Price - {{mb.price}},
+                        Power - {{mb.power}},
+    </option>
+    {% endfor %}
+</select>
+
+
+
+<p style="color:#fcd508;"> Cooling: </p>
+<select name="Cooler" size="1" id="Combobox7" style="max-width:100%;">
+    {% for c in catalogue.cooling %}
+    <option value={{c}}>{{ c.name }}:
+                        Dissipated TDP - {{c.dissipated_tdp}},
+                        Price - {{c.price}},
+                        Power - {{c.power}},
+                        Socket - {{c.supported_socket}}
+    </option>
+    {% endfor %}
+
+</select>
+
+<p style="color:#fcd508;"> Power Supply: </p>
+<select name="PowerBox" size="1" id="Combobox2" style="max-width:100%;">
+    {% for ps in catalogue.power_supply %}
+    <option value={{ps}}>{{ ps.name }}:
+                        Price - {{ps.price}},
+                        Power - {{ps.power}}
+    </option>
+    {% endfor %}
+
+</select>
+{% endblock %}
+
+{% block text %}
+    {{case.case_text}}
+{% endblock %}
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="background-color: #184e8e;background-image: url(&quot;{% static 'assets/img/Ресурс%202.png'%}&quot;);">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Component Parts</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/Article-List.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/Features-Blue.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/Footer-Basic.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-Clean.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-with-Button.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/Team-Boxed.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/Team-Clean.css'%}">
+</head>
+
+<body style="background-image: url(&quot;{% static 'assets/img/Ресурс%202.png'%}&quot;);">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-image: url(&quot;{% static 'assets/img/Ресурс%202.png'%}&quot;);">
+        <div class="container"><a class="navbar-brand" href="#" style="color: rgb(36,109,218);">Собери Компьютер</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                   <!-- <li class="nav-item" role="presentation"><a class="nav-link active" href="#" target="_parent">Главная</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Регистрация/вход</a></li> -->
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div style="background-image: url(&quot;{% static 'assets/img/Ресурс%202.png'%}&quot;);">
+        <div class="container">
+            <div class="row" style="background-image: url(&quot;{% static 'assets/img/Ресурс%205.png'%}&quot;);background-position: center;background-size: cover;">
+                <div class="col-md-3 col-lg-1 col-xl-2 offset-lg-3 offset-xl-2">{% block replay %}{% endblock%}</div>
+             <div
+                    class="col-md-3 col-lg-1 col-xl-1 offset-xl-1"><a href="#"><button class="btn text-nowrap" type="button" style="background-color: rgba(255,255,255,0);background-size: cover;">&nbsp; &nbsp;Помощь</button></a></div>
+            <div class="col-md-3 col-lg-1 offset-xl-1"><a href="{% url 'index' %}"><button class="btn text-nowrap shadow-none" type="button" style="background-size: contain;background-color: rgba(0,123,255,0);">Вернуться назад</button></a></div>
+            <div class="col-md-3 col-lg-1 col-xl-1 offset-xl-1"><a href="#"><button class="btn" type="button" style="background-color: rgba(0,123,255,0);">Подробности</button></a></div>
+        </div>
+    </div>
+    </div>
+    <div class="article-list" style="background-color: rgb(3,1,1);background-image: url(&quot;{% static 'assets/img/Ресурс%202.png'%}&quot;);">
+        <div class="container">
+            <div class="row articles" style="background-image: url(&quot;{% static 'assets/img/Ресурс%2010.png'%}&quot;);">
+                <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item"><a href="#"></a>
+                    <div class="dropdown"><button class="btn dropdown-toggle shadow-none" data-toggle="dropdown" aria-expanded="false" type="button" style="background-image: url(&quot;{% static 'assets/img/Ресурс%2015.png'%}&quot;);background-color: rgb(48,13,13);background-size: cover;background-repeat: no-repeat;background-position: right;margin: -6px;height: 49px;width: 137px;padding: 10px;filter: brightness(101%) contrast(111%) grayscale(9%);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button>
+                        <!--<div
+                            class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Первый уровень</a><a class="dropdown-item" role="presentation" href="#">Второй уровень</a><a class="dropdown-item" role="presentation" href="#">Третий уровень</a></div> -->
+                </div><a class="action" href="#"></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-5 col-xl-5 item"><p style="color:#fcd508;">{% block content-1 %}{% endblock %}</p></div>
+                <div class="col-sm-6 col-md-4 col-lg-5 col-xl-5 offset-xl-0 item">{% block content-2%} {% endblock %}</div>
+            <div class="col-xl-1 offset-xl-10"></div>
+        </div>
+    </div>
+    </div>
+    <div style="background-image: url(&quot;{% static 'assets/img/Ресурс%202.png'%}&quot;);width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-2 col-xl-3" style="background-image: url(&quot;{% static 'assets/img/Ресурс%2010.png'%}&quot;);"><img class="img-fluid" src="{% static 'assets/img/Ресурс%2014.png'%}"></div>
+                <div class="col-auto col-md-6 col-lg-10 col-xl-9" style="background-image: url(&quot;{% static 'assets/img/Ресурс%2010.png'%}&quot;);">
+                    <p style="color: #fcd508;">{% block text %}{% endblock %}&nbsp;</p>
+                    <div class="btn-group" role="group"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/jquery.min.js'%}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+</body>
+
+</html>

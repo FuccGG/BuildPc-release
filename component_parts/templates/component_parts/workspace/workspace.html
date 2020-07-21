@@ -1,0 +1,21 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block replay %}<a href="{% url 'cases' %}"><button class="btn text-nowrap" onclick="" type="button" style="background-size: cover;background-repeat: no-repeat;background-color: 0;color: #fcd508;font-size: 15px;margin: -2px;margin-top: 5px;margin-right: -10px;margin-bottom: 0;margin-left: -20px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Начать сначала</button></a>{% endblock %}
+{% block content-1 %}
+<h5 style="color:#fcd508;"> Your Component Parts </h5>
+    <h7 style="color:#fcd508;"> Здесь появится форма кейса с комплектующими, предложенными в задании.</h7>
+{% endblock %}
+
+{% block content-2%}
+<h5 style="color:#fcd508;"> Characteristics </h5>
+    <h7 style="color:#fcd508;"> Здесь можно увидеть все возможные комплектующие и их характеристики для корректного заполнения в форме слева.</h7>
+{% endblock %}
+
+{% block text %}
+<h7 style="color:#fcd508;"> Здесь будет задание кейса и сопутствующие условия.</h7>
+<h7 style="color:#fcd508;"> По выполнении задания, нажмите на кнопку "проверить".</h7>
+{% endblock %}
+
+
