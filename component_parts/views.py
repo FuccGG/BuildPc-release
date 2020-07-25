@@ -31,7 +31,7 @@ def cases(request):
 
 
 def case_result(request):
-    solution = models.PlayerAction.objects.filter(user_id=0).order_by('-id')[0]
+    solution = models.PlayerAction.objects.filter(user_id=request.user.id).order_by('-id')[0]
     res = functions_1.general_check_details(solution)
     # solution.delete()
     return render(request, 'component_parts/case_result/case_result.html', {'res': res})
@@ -52,8 +52,8 @@ def case_form(request):
         form = CaseForm({'video_card': get_id(case.video_card), 'cpu': get_id(case.cpu), 'ram': get_id(case.ram), 'hdd': get_id(case.hdd),
                          'ssd': get_id(case.ssd), 'mother_board': get_id(case.mother_board), 'cooling': get_id(case.cooling),
                          'power_supply': get_id(case.power_supply),
-                         'case_level': case.case_level, 'budget': case.budget,'user_id': 0}) #user_id следует в дальнейшем заменить на current user_id
-    return render(request, 'component_parts/case_form/case_form.html', {'form': form, 'case': case, 'catalogue': catalogue})
+                         'case_level': case.case_level, 'budget': case.budget,'user_id': request.user.id})
+        return render(request, 'component_parts/case_form/case_form.html', {'form': form, 'case': case, 'catalogue': catalogue})
 
 
 def register(request):
